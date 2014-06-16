@@ -1,7 +1,10 @@
+![animation for the web](https://github.com/jleonard/animation-for-the-web/raw/master/img/animation-for-the-web.gif)
+
 Animation for the Web
 =====================
 
-![animation for the web](https://github.com/jleonard/animation-for-the-web/raw/master/img/animation-for-the-web.gif)
+## Getting Started
+
 
 # Part 1: UI Animations with css3  
 * cross-browser support disclaimer
