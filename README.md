@@ -1,6 +1,8 @@
 Animation for the Web
 =====================
 
+![animation for the web](https://github.com/jleonard/animation-for-the-web/raw/master/img/animation-for-the-web.gif)
+
 # Part 1: UI Animations with css3  
 * cross-browser support disclaimer
 * http://caniuse.com/transforms2d
