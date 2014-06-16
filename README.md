@@ -4,6 +4,9 @@ Animation for the Web
 =====================
 
 ## Before we start...
+
+This session is intended for you to code along. 
+
 > If you want to code along with the session or experiment on your own, follow the setup instructions.
 
 # Intro
