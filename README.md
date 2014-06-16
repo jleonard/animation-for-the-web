@@ -3,8 +3,12 @@
 Animation for the Web
 =====================
 
-## Code Along
+## Before we start...
 > If you want to code along with the session or experiment on your own, follow the setup instructions.
+
+# Intro
+
+## Transitions
 
 # Part 1: UI Animations with css3  
 * cross-browser support disclaimer
