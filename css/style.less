@@ -10,15 +10,22 @@
   box-sizing: border-box;
 }
 
-html,body,main,section{
+html,body,main{
   height: 100%;
+}
+
+section{
+  min-height: 100%;
 }
 
 a{
   text-decoration: none;
-  color: @white;
-  background-color: @blue;
-  padding: 3px 8px;
+  color: @blue;
+  &.button{
+    color: @white;
+    background-color: @blue;
+    padding: 3px 8px;
+  }
 }
 
 body{
@@ -43,7 +50,7 @@ section{
   }
 }
 
-h1,h2,p{
+h1,h2,p,ul{
   text-rendering: optimizeLegibility;
 }
 
@@ -59,11 +66,17 @@ h2{
   font-size: 3em;
 }
 
-p{
+p,ul{
   font: normal 1em/1.625em @serif;
   &.lead{
     font: 2em/1.4375em @serif;
   }
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 section:nth-child(2){
