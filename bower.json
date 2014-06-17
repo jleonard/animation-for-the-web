@@ -1,0 +1,8 @@
+{
+  "name": "my-project",
+  "dependencies": {
+    "brainless": "~3.0.3",
+    "jquery": "~2.1.1",
+    "colors": "~0.2.0"
+  }
+}

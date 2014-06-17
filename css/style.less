@@ -1,0 +1,92 @@
+@import '../bower_components/brainless/less/brainless.less';
+@import '../bower_components/colors/less/_variables.less';
+
+@serif: 'Vollkorn', serif;
+@sans: 'Lato', sans-serif;
+
+// scaffolding
+// ---------------------------
+*,*:before,*:after{
+  box-sizing: border-box;
+}
+
+html,body,main,section{
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: @white;
+  background-color: @blue;
+  padding: 3px 8px;
+}
+
+body{
+  margin: 0;
+  font-family: @sans;
+  color: #122;
+}
+
+section{
+  padding: 40px;
+  position: relative;
+  div{
+    width: 60%;
+    margin: 0 auto;
+  }
+  aside{
+    margin-left: -20%;
+  }
+}
+
+h1,h2,p{
+  text-rendering: optimizeLegibility;
+}
+
+h1{
+  font-family: @sans;
+  text-rendering: optimizeLegibility;
+  font-size: 5em;
+  font-weight: 900;
+}
+
+h2{
+  font-family: @sans;
+  font-size: 3em;
+}
+
+p{
+  font: normal 1em/1.625em @serif;
+  &.lead{
+    font: 2em/1.4375em @serif;
+  }
+}
+
+section:nth-child(2){
+  //border-top: 40px solid @maroon;
+}
+
+section.lead{
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  h1{
+    position: absolute;
+    #center > .x();
+    bottom: 50px;
+  }
+}
+
+// intro
+// ---------------------------
+#intro{
+  background-image: url('../img/animation-for-the-web.gif');
+}
+
+// setup
+// ---------------------------
+#setup{
+  background-image: url('../img/getting-setup.gif');
+  color: #fff;
+}
+

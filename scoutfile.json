@@ -1,0 +1,5 @@
+{
+  "dependencies":{
+    "bower":["brainless","jquery","colors"]
+  }
+}

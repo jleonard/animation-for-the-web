@@ -1,0 +1,32 @@
+#util{
+
+  // clearfix
+  // ---------------------------
+  .clearfix() {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+  // horizontal layouts
+  // -----------------------------------------------
+  .hBox(@margin:20px){
+    > *{
+      float: left;
+      margin-left: @padding / 2;
+      margin-right: @padding / 2;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+
+}
