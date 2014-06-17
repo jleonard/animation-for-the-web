@@ -46,6 +46,10 @@ section div {
 section aside {
   margin-left: -20%;
 }
+section iframe {
+  width: 100%;
+  min-height: 490px;
+}
 h1,
 h2,
 p {
