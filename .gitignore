@@ -1,1 +1,12 @@
-#todo
+# osx noise
+.DS_Store
+
+# svn & cvs
+.svn
+CVS
+
+*.log
+node_modules
+bower_components
+
+# project specific

@@ -7,6 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
+    <link rel="stylesheet" href="bower_components/highlightjs/styles/tomorrow-night.css">
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic|Vollkorn:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,20 +22,61 @@
         </section>
         <section>
           <div>
-            <h2>Code along with the session!</h2>
+            <h2><span class='fa fa-code'></span><br/>Code along.</h2>
             <p class='lead'>
-              Basic templates &amp; snippets are available for you to try out the animation techniques covered in the session. Getting setup is a slight bit of a bitch but might be fun for those who like to get their hands dirty.<br/><br/>
-              <a href="#">Setup instructions</a>
+              Basic templates &amp; snippets are available for you to try the animation techniques covered here. Getting setup is a slight hassle but fun for those who like to get their hands dirty.<br/><br/>
+              <a href="setup.html">Setup instructions</a>
             </p>
           </div>
         </section>
         <section>
           <div>
-            <h2>Recap</h2>
+            <h2>Introduction</h2>
             <p class='lead'>
-              Web animation with css.
+              There are many techniques for creating animations for the web. We're going to focus on 2 methods for making <em>css based</em> animations. css animations are particularly useful when you want to animate user interfaces (as opposed to making games, animated data visualizations etc.). 
             </p>
-            <img src='img/before-after.png'/>
+
+            <h3>Recap</h3>
+            <p>You know what .css and .html are don't you? The quickest way to explain is that html is structure and css is style.<br/><br/>Here's some sample html. It's structred content.</p>
+
+<pre><code>&lt;h1&gt;I'm a headline&lt;/h1&gt;
+&lt;p&gt;I'm a paragraph. Lorem ipsum dolor...&lt;/p&gt;
+</code></pre>
+
+            <p>...and here are css rules that apply style to the structure.</p>
+<pre><code>h1{
+  font-size: 80px;
+  font-family: Arial;
+  color: rgb(20,20,20);
+}
+p{
+  font-size: 12px;
+  font-family: Georgia;
+}
+</code></pre>
+          
+            <p>...and if that's too complicated</p>
+
+            <div class='image'>
+              <img src='img/before-after.png'/>
+              <h4>.html <span>.html + .css</span>
+              </h4>
+            </div>
+
+            <p class='lead'>Get it? Let's animate.</p>
+
+          </div>
+        </section>
+
+        <section id='transitions'>
+          <div>
+            <h1>Technique #1: transitions</h1>
+          </div>
+        </section>
+
+        <section class='transitions'>
+          <div>
+            <p class='lead'>Transitions change one or more style properties over time.</p>
           </div>
         </section>
       </main>

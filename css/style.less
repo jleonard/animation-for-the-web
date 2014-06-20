@@ -1,6 +1,8 @@
 @import '../bower_components/brainless/less/brainless.less';
 @import '../bower_components/colors/less/_variables.less';
 
+@import '../bower_components/font-awesome/less/font-awesome.less';
+
 @serif: 'Vollkorn', serif;
 @sans: 'Lato', sans-serif;
 
@@ -66,8 +68,15 @@ h2{
   font-size: 3em;
 }
 
+h4{
+  span{
+    float:right;
+    margin-right: 12px;
+  }
+}
+
 p,ul{
-  font: normal 1em/1.625em @serif;
+  font: normal 1.5em/1.4375em @serif;
   &.lead{
     font: 2em/1.4375em @serif;
   }
@@ -94,6 +103,12 @@ section.lead{
   }
 }
 
+pre{
+  background-color: #1d1f21;
+  padding: 10px;
+  border-left: 10px solid #000;
+}
+
 // intro
 // ---------------------------
 #intro{
@@ -102,8 +117,27 @@ section.lead{
 
 // setup
 // ---------------------------
-#setup{
+#setup section.lead{
   background-image: url('../img/getting-setup.gif');
   color: #fff;
+}
+
+#setup section{
+  min-height: 75%;
+}
+
+#setup section.end{
+  min-height: 100%;
+  color: @white;
+  background-color: @maroon;
+}
+
+#transitions{
+  background-color: @orange;
+  color: #fff;
+}
+
+.transitions{
+  border-top: 20px solid lighten(@orange,20%);
 }
 
