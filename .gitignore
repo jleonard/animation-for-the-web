@@ -7,6 +7,5 @@ CVS
 
 *.log
 node_modules
-bower_components
 
 # project specific
