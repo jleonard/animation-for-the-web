@@ -109,6 +109,16 @@ pre{
   border-left: 10px solid #000;
 }
 
+div.container{
+  position: relative;
+}
+
+div.hbox{
+  width: 100%;
+  #util > .clearfix();
+  #util > .hBox(40px);
+}
+
 // intro
 // ---------------------------
 #intro{
@@ -138,6 +148,58 @@ pre{
 }
 
 .transitions{
-  border-top: 20px solid lighten(@orange,20%);
+  //border-top: 20px solid lighten(@orange,20%);
+  .demo{
+    #transition > .property(all);
+    #transition > .duration(2s);
+    //#center > ._();
+    #box > .square(300px);
+    border: 10px solid @red;
+    &:hover{
+      background-color: @red;
+      color: #fff;
+    }
+  }
 }
+
+
+  .timing{
+    #transition > .property(all);
+    #transition > .duration(1.5s);
+    #box > .square(100px);
+    border-radius: 80px;
+    background-color: @red;
+    position: relative;
+    &:before{
+      content: 'x';
+      display: block;
+      position: absolute;
+      #center > ._();
+      color: #fff;
+      font-weight: bold;
+    }
+    &:hover{
+      #transform > .scale(2,2);
+      #transform > .rotate(180deg);
+    }
+    &.ease{
+      #transition > .easing(ease);
+    }
+    &.ease-in{
+      #transition > .easing(ease-in);
+    }
+    &.ease-out{
+      #transition > .easing(ease-out);
+    }
+    &.ease-in-out{
+      #transition > .easing(ease-in-out);
+    }
+    &.linear{
+      #transition > .easing(linear);
+    }
+    &.steps{
+      //#transition > .steps(6,end);
+    }
+  }
+
 
