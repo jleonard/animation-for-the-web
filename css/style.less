@@ -2,6 +2,7 @@
 @import '../bower_components/colors/less/_variables.less';
 
 @import '../bower_components/font-awesome/less/font-awesome.less';
+@import 'flex.less';
 
 @serif: 'Vollkorn', serif;
 @sans: 'Lato', sans-serif;
@@ -25,8 +26,14 @@ a{
   color: @blue;
   &.button{
     color: @white;
-    background-color: @blue;
-    padding: 3px 8px;
+    background-color: @navy;
+    padding: 12px 8px;
+    min-width: 120px;
+    text-align: center;
+    display: inline-block;
+    &:hover{
+      background-color: @blue;
+    }
   }
 }
 
@@ -39,7 +46,7 @@ body{
 section{
   padding: 40px;
   position: relative;
-  div{
+  > div{
     width: 60%;
     margin: 0 auto;
   }
@@ -61,6 +68,9 @@ h1{
   text-rendering: optimizeLegibility;
   font-size: 5em;
   font-weight: 900;
+  span{
+    font-size: 0.5em;
+  }
 }
 
 h2{
@@ -68,10 +78,16 @@ h2{
   font-size: 3em;
 }
 
+h3{
+  font-size: 1.5em;
+  background-color: @silver;
+  display: inline-block;
+}
+
 h4{
   span{
     float:right;
-    margin-right: 12px;
+    margin-right: 341px;
   }
 }
 
@@ -114,9 +130,28 @@ div.container{
 }
 
 div.hbox{
+  margin: 0;
   width: 100%;
   #util > .clearfix();
   #util > .hBox(40px);
+}
+
+div.flex{
+  #flex > .container();
+  #flex > .justify("left");
+  #flex > .align('stretch');
+  > *{
+    //#flex > .basis(25%);
+  }
+}
+
+div.demo{
+  #box > .padding(10px);
+  font-size: 2em;
+    font-weight: 900;
+    #box > .size(200px,125px);
+    border: 10px solid @yellow;
+    cursor: pointer;
 }
 
 // intro
@@ -143,45 +178,40 @@ div.hbox{
 }
 
 #transitions{
-  background-color: @orange;
+  background-color: @yellow;
   color: #fff;
 }
 
 .transitions{
-  //border-top: 20px solid lighten(@orange,20%);
   .demo{
-    #reset > .margin();
     #transition > .property(all);
-    #transition > .duration(2s);
-    //#center > ._();
-    #box > .square(300px);
-    border: 10px solid @red;
-    &:hover{
-      background-color: @red;
+    #transition > .duration(2s);    
+    &:hover,&.hover{
+      background-color: @yellow;
       color: #fff;
+    }
+    &.plain{
+      #reset > ._(transition);
+      span{
+        #text > .line-through();
+      }
     }
   }
 }
 
 
-  .timing{
+.timing{
+  margin: 0;
+  width: 100%;
+  a.button{
+    margin: 16px 0px;
+  }
+  .demo{
     #transition > .property(all);
     #transition > .duration(1.5s);
-    #box > .square(100px);
-    border-radius: 80px;
-    background-color: @red;
-    position: relative;
-    &:before{
-      content: 'x';
-      display: block;
-      position: absolute;
-      #center > ._();
-      color: #fff;
-      font-weight: bold;
-    }
-    &:hover{
-      #transform > .scale(2,2);
-      #transform > .rotate(180deg);
+    font-size: 1em;
+    &:hover,&.hover{
+      #transform > .scale(0.25,0.25);
     }
     &.ease{
       #transition > .easing(ease);
@@ -200,7 +230,44 @@ div.hbox{
     }
     &.steps{
       //#transition > .steps(6,end);
+      -webkit-transition-timing-function: steps(4,end);
+      transition-timing-function: steps(4, end);
     }
+    &.step-end{
+      #transition > .easing(step-end);
+    }
+    &.step-start{
+      #transition > .easing(step-start);
+    }
+  }    
+}
+
+
+// transition generator
+// ---------------------------
+.generator{
+  h1{ margin-top: 25px; }
+}
+.generator section > div{
+  min-height: 500px;
+  position: relative;
+  #util > .clearfix();
+}
+.controls{
+  margin-top:20px;
+  margin-bottom: 20px;
+  #box > .padding(20px,0px);
+  border-top: 10px solid @yellow;
+  > *{
+    min-height: 28px;
+    display: inline-block;
   }
+  .button{
+    margin: 24px 0px;
+  }
+}
 
-
+#demo{
+  position: absolute;
+  left: 0px;
+}
