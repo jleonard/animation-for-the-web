@@ -1616,12 +1616,16 @@ section {
   padding: 40px;
   position: relative;
 }
-section > div {
+section > div,
+section > aside {
   width: 60%;
   margin: 0 auto;
 }
 section aside {
-  margin-left: -20%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 10px solid #dddddd;
+  color: #222;
 }
 section iframe {
   width: 100%;
@@ -1652,8 +1656,7 @@ h3 {
   display: inline-block;
 }
 h4 span {
-  float: right;
-  margin-right: 341px;
+  margin-left: 175px;
 }
 p,
 ul {
@@ -1844,7 +1847,7 @@ div.demo {
   border-top: 10px solid #ffdc00;
 }
 .controls > * {
-  min-height: 28px;
+  min-height: 24px;
   display: inline-block;
 }
 .controls .button {

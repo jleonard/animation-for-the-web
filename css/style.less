@@ -46,12 +46,15 @@ body{
 section{
   padding: 40px;
   position: relative;
-  > div{
+  > div, > aside{
     width: 60%;
     margin: 0 auto;
   }
   aside{
-    margin-left: -20%;
+    padding: 20px;
+    background-color: lighten(@silver,80%);
+    border: 10px solid @silver;
+    color: #222;
   }
   iframe{
     width: 100%;
@@ -86,8 +89,7 @@ h3{
 
 h4{
   span{
-    float:right;
-    margin-right: 341px;
+    margin-left: 175px;
   }
 }
 
@@ -259,7 +261,7 @@ div.demo{
   #box > .padding(20px,0px);
   border-top: 10px solid @yellow;
   > *{
-    min-height: 28px;
+    min-height: 24px;
     display: inline-block;
   }
   .button{
