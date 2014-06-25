@@ -1598,8 +1598,14 @@ a {
 }
 a.button {
   color: #ffffff;
+  background-color: #001f3f;
+  padding: 12px 8px;
+  min-width: 120px;
+  text-align: center;
+  display: inline-block;
+}
+a.button:hover {
   background-color: #0074d9;
-  padding: 3px 8px;
 }
 body {
   margin: 0;
@@ -1611,12 +1617,16 @@ section {
   padding: 40px;
   position: relative;
 }
-section div {
+section > div,
+section > aside {
   width: 60%;
   margin: 0 auto;
 }
 section aside {
-  margin-left: -20%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 10px solid #dddddd;
+  color: #222;
 }
 section iframe {
   width: 100%;
@@ -1634,13 +1644,20 @@ h1 {
   font-size: 5em;
   font-weight: 900;
 }
+h1 span {
+  font-size: 0.5em;
+}
 h2 {
   font-family: 'Lato', sans-serif;
   font-size: 3em;
 }
+h3 {
+  font-size: 1.5em;
+  background-color: #dddddd;
+  display: inline-block;
+}
 h4 span {
-  float: right;
-  margin-right: 12px;
+  margin-left: 175px;
 }
 p,
 ul {
@@ -1675,6 +1692,50 @@ pre {
   padding: 10px;
   border-left: 10px solid #000;
 }
+div.container {
+  position: relative;
+}
+div.hbox {
+  margin: 0;
+  width: 100%;
+}
+div.hbox:before,
+div.hbox:after {
+  content: " ";
+  display: table;
+}
+div.hbox:after {
+  clear: both;
+}
+div.hbox > * {
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+div.hbox > *:first-child {
+  margin-left: 0;
+}
+div.hbox > *:last-child {
+  margin-right: 0;
+}
+div.flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-start;
+  justify-content: reverse-row;
+  align-items: stretch;
+}
+div.demo {
+  padding: 10px;
+  font-size: 2em;
+  font-weight: 900;
+  width: 200px;
+  height: 125px;
+  border: 10px solid #ffdc00;
+  cursor: pointer;
+}
 #intro {
   background-image: url('../img/animation-for-the-web.gif');
 }
@@ -1691,11 +1752,111 @@ pre {
   background-color: #85144b;
 }
 #transitions {
-  background-color: #ff851b;
+  background-color: #ffdc00;
   color: #fff;
 }
-.transitions {
-  border-top: 20px solid #ffbc81;
+.transitions .demo {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 2s;
+  transition-duration: 2s;
+}
+.transitions .demo:hover,
+.transitions .demo.hover {
+  background-color: #ffdc00;
+  color: #fff;
+}
+.transitions .demo.plain {
+  transition: all 0 ease 0;
+}
+.transitions .demo.plain span {
+  text-decoration: line-through;
+}
+.timing {
+  margin: 0;
+  width: 100%;
+}
+.timing a.button {
+  margin: 16px 0px;
+}
+.timing .demo {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1.5s;
+  transition-duration: 1.5s;
+  font-size: 1em;
+}
+.timing .demo:hover,
+.timing .demo.hover {
+  -webkit-transform: scale(0.25, 0.25);
+  -moz-transform: scale(0.25, 0.25);
+  -o-transform: scale(0.25, 0.25);
+  -ms-transform: scale(0.25, 0.25);
+  transform: scale(0.25, 0.25);
+}
+.timing .demo.ease {
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+.timing .demo.ease-in {
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+.timing .demo.ease-out {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.timing .demo.ease-in-out {
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+.timing .demo.linear {
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+.timing .demo.steps {
+  -webkit-transition-timing-function: steps(4, end);
+  transition-timing-function: steps(4, end);
+}
+.timing .demo.step-end {
+  -webkit-transition-timing-function: step-end;
+  transition-timing-function: step-end;
+}
+.timing .demo.step-start {
+  -webkit-transition-timing-function: step-start;
+  transition-timing-function: step-start;
+}
+.generator h1 {
+  margin-top: 25px;
+}
+.generator section > div {
+  min-height: 500px;
+  position: relative;
+}
+.generator section > div:before,
+.generator section > div:after {
+  content: " ";
+  display: table;
+}
+.generator section > div:after {
+  clear: both;
+}
+.controls {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px 0px;
+  border-top: 10px solid #ffdc00;
+}
+.controls > * {
+  min-height: 24px;
+  display: inline-block;
+}
+.controls .button {
+  margin: 24px 0px;
+}
+#demo {
+  position: absolute;
+  left: 0px;
 }
 .dweet {
   width: 320px;

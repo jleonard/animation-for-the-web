@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Transition Generator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="bower_components/highlightjs/styles/tomorrow-night.css">
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic|Vollkorn:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style id="style">
+    </style>
+
+    </head>
+    <body class='generator'>
+      <main>
+        <section>
+          <div>
+            <h1>Transition generator</h1>
+            <div id='demo' class='demo'></div>
+          </div>
+          <div class='controls'>
+            
+            <label>properties to transition</label>
+            <br/>
+            <input type='checkbox' name='property' value='background-color' checked />
+            <label>background-color</label>
+            <br/>
+            <input type='checkbox' name='property' value='scale'/>
+            <label>scale (50%)</label>
+            <br/>
+            <input type='checkbox' name='property' value='left'/>
+            <label>x position</label>
+
+            <br/>
+            <label>duration (milliseconds)</label>
+            <input name='duration' type='number' value='2000' step="250">
+            <br/>
+            <label>timing function</label>
+            <select name='easing'>
+              <option>linear</option>
+              <option>ease</option>
+              <option>ease-in</option>
+              <option>ease-out</option>
+              <option>ease-in-out</option>
+              <option>step-start</option>
+              <option>step-end</option>
+            </select>
+            <br/>
+            <a class='button generate'>test</a>
+          </div>
+        </section>
+      </main>
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

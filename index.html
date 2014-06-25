@@ -70,16 +70,61 @@ p{
 
         <section id='transitions'>
           <div>
-            <h1>Technique #1: transitions</h1>
+            <h1>.css transitions</h1>
           </div>
         </section>
 
         <section class='transitions'>
           <div>
-            <p class='lead'>Transitions change one or more style properties over time.</p>
+            <p class='lead'>Transitions allow you to change one or more style properties over time.</p>
+            <div class='hbox'>
+
+              <div class='demo'>
+                transition
+              </div>
+
+              <div class='demo plain'>
+                <span>transition</span>
+              </div>
+            </div>
+            
+            <p>In the example above both boxes are styled to have a solid background and white text on hover. The first box has a transition rule that says anytime a change in color occurs, a 2 second transition will move between the values. The second box has no transition applied so the color changes happend instantaneously.</p>
+
+            <h3>Timing transitions</h3>
+            <p>.css has a number of built-in <em>timing functions</em> to control a transition's acceleration.</p>
+            <div class='timing'>
+              <div class='flex'>
+                <div class='demo linear'>linear</div>
+                <div class='demo ease'>ease</div>
+                <div class='demo ease-in'>ease-in</div>
+                <div class='demo ease-out'>ease-out</div>
+                <div class='demo ease-in-out'>ease-in-out</div>
+                <div class='demo step-start'>step-start</div>
+                <div class='demo steps'>steps (4)</div>
+                <div class='demo step-end'>step-end</div>
+              </div>
+              <a class="button" href="#">Test</a>
+            </div>
+
+            <aside>
+              <p>Getting a transition right is about balancing the acceleration and the duration. Go play with this transition visualizer.</p>
+              <a class="button" href="generator.html" target="_blank">Transition Visualizer</a>
+            </aside>
+
+            <h3>More reading</h3>
+            <ul>
+              <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">css animatable properties</a>
+              </li>
+              <li>
+                <a href="http://www.smashingmagazine.com/2014/04/15/understanding-css-timing-functions/" target="_blank">understanding css timing functions</a>
+              </li>
+            </ul>
           </div>
         </section>
+
       </main>
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
       <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
