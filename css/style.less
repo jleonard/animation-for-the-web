@@ -34,6 +34,7 @@ body{
   margin: 0;
   font-family: @sans;
   color: #122;
+  perspective: 1000;
 }
 
 section{
@@ -139,5 +140,38 @@ pre{
 
 .transitions{
   border-top: 20px solid lighten(@orange,20%);
+}
+
+// dweet demo
+// ---------------------------
+.dweet{
+  #box > .size(320px,568px);
+  #transition > .property(all);
+  #transition > .duration(0.5s);
+  position: relative;
+ // #center > ._();
+  background-color: @maroon;
+  #transform > .style(preserve-3d);
+  #transform > .backface(hidden);
+  .front,.back{
+    border-top: 10px solid #c30;
+    #box > .square(100%);
+    background-color: @orange;
+    #transform > .backface(hidden);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .front {
+    background-color: @maroon;
+    z-index: 2;
+  }
+
+  /* back, initially hidden pane */
+  .back {
+    #transform > .rotateY(180deg);
+    //transform: rotateY(180deg);
+  }
+
 }
 
