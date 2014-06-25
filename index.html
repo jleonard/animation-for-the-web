@@ -36,7 +36,7 @@
               There are many techniques for creating animations for the web. We're going to focus on 2 methods for making <em>css based</em> animations. css animations are particularly useful when you want to animate user interfaces (as opposed to making games, animated data visualizations etc.). 
             </p>
 
-            <h3>Recap</h3>
+            <h3>recap</h3>
             <p>You know what .css and .html are don't you? The quickest way to explain is that html is structure and css is style.<br/><br/>Here's some sample html. It's structred content.</p>
 
 <pre><code>&lt;h1&gt;I'm a headline&lt;/h1&gt;
@@ -68,9 +68,33 @@ p{
           </div>
         </section>
 
+        <!-- start transforms -->
+        <section id="transforms">
+          <div>
+            <h1>transforms</h1>
+          </div>
+        </section>
+
+        <section class='transforms'>
+          <div>
+            <p class='lead'>css transforms are the properities you typically see animated on the web today.</p>
+            <div class='transformers'>
+              <div class='hbox'>
+                <div class='demo'>normal</div>
+                <div class='demo rotate-x'>rotate-x <span>45<sup>o</sup></span></div>
+                <div class='demo rotate-y'>rotate-y <span>45<sup>o</sup></span></div>
+                <div class='demo rotate-z'>rotate-z <span>45<sup>o</sup></span></div>
+                <div class='demo scale'>scale <span>50%</span></div>
+                <div class='demo skew'>skew <span>5<sup>o</sup></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- start transitions -->
         <section id='transitions'>
           <div>
-            <h1>.css transitions</h1>
+            <h1>transitions</h1>
           </div>
         </section>
 
@@ -88,10 +112,49 @@ p{
               </div>
             </div>
             
-            <p>In the example above both boxes are styled to have a solid background and white text on hover. The first box has a transition rule that says anytime a change in color occurs, a 2 second transition will move between the values. The second box has no transition applied so the color changes happend instantaneously.</p>
+            <p>Both boxes have hover effects that change the text and background colors. The box on the left has a 2 second linear transition applied while the right showcases the standard hard swap behavior.</p>
 
-            <h3>Timing transitions</h3>
+            <p>Transitions are made up of 4 different variables</p>
+
+
+<pre><code>section{
+  transition-property: background-color;
+  transition-duration: 2s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in;
+}
+</code></pre>
+
+             <table>
+              <tr>
+                <td>property</td>
+                <td>the style properties to animate (ex: background-color, width)</td>
+              </tr>
+
+              <tr>
+                <td>duration</td>
+                <td>expressed in seconds or milliseconds<td> 
+              </tr>
+
+              <tr>
+                <td>delay</td>
+                <td><em>optional</em> a delayed start time expressed in seconds or milliseconds</td>
+              </tr>
+
+              <tr>
+                <td>timing function</td>
+                <td>the style of the transition expressed as an acceleration curve (more on this below).</td>
+              </tr>
+
+            </table>
+
+            <h3>timing transitions</h3>
             <p>.css has a number of built-in <em>timing functions</em> to control a transition's acceleration.</p>
+
+            <p>These timing functions are based on <a href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves" target="_blank">cubic bezier curves</a>.</p>
+            <img src="img/bezier.png" alt='bezier curve'/>
+
+            <p>Notice they don't have any effect on the duration.</p>
             <div class='timing'>
               <div class='flex'>
                 <div class='demo linear'>linear</div>
@@ -106,12 +169,28 @@ p{
               <a class="button" href="#">Test</a>
             </div>
 
+            <p>If you want finer control of your transition you can define custom cubic-bezier curves. Here's a convenient <a href="http://www.roblaplaca.com/examples/bezierBuilder/" target="_blank">bezier builder</a>.</p>
+
+            <p>Here's one I made. It starts really fast and then slows way down. The closest out of the box option is <code>ease-out</code> but look how differently they behave.</p>
+
+            <div class='timing'>
+              <div class='flex'>
+                <div class='demo custom-timing'>custom timing</div>
+                <div class='demo ease-out'>ease-out</div>
+              </div>
+              <a class="button" href="#">Test</a>
+            </div>
+
+            <!--<h5>cubic-bezier(<span>CP0x</span>, <span>CP0y</span>, <span>CP1x</span>, <span>CP1y</span>);</h5>
+
+            <p>Where CP<sub>0</sub> and CP<sub>1</sub> are the control points.</p> -->
+
             <aside>
               <p>Getting a transition right is about balancing the acceleration and the duration. Go play with this transition visualizer.</p>
               <a class="button" href="generator.html" target="_blank">Transition Visualizer</a>
             </aside>
 
-            <h3>More reading</h3>
+            <h3>more reading</h3>
             <ul>
               <li>
                 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">css animatable properties</a>
@@ -119,11 +198,15 @@ p{
               <li>
                 <a href="http://www.smashingmagazine.com/2014/04/15/understanding-css-timing-functions/" target="_blank">understanding css timing functions</a>
               </li>
+              <li>
+                <a href="http://roblaplaca.com/blog/2011/03/11/understanding-css-cubic-bezier/" target="_blank">understanding cubic bezier</a>
+              </li>
             </ul>
           </div>
         </section>
 
       </main>
+      <script type="text/javascript" src="bower_components/dweet.io/dweet.io.js"></script>
       <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
       <script type="text/javascript" src="js/app.js"></script>
   </body>
