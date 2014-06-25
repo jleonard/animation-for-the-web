@@ -1,0 +1,21 @@
+{
+  "name": "dweet.io",
+  "main": "dweet.io.js",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt",
+    "README.md",
+    "test"
+  ],
+  "homepage": "https://github.com/buglabs/dweetio-client",
+  "_release": "f7155f5984",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f7155f5984377d467ad94a9dc93e99db2a6b9576"
+  },
+  "_source": "git://github.com/buglabs/dweetio-client.git",
+  "_target": "*",
+  "_originalSource": "dweet.io",
+  "_direct": true
+}
