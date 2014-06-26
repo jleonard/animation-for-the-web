@@ -1680,13 +1680,21 @@ h5 span {
 }
 p,
 ul,
-table {
+table,
+blockquote {
   font: normal 1.5em/1.4375em 'Vollkorn', serif;
 }
 p.lead,
 ul.lead,
-table.lead {
+table.lead,
+blockquote.lead {
   font: 2em/1.4375em 'Vollkorn', serif;
+}
+blockquote {
+  background-color: #f4fd72;
+  border-left: 10px solid #c6d303;
+  padding: 10px;
+  margin: 0;
 }
 table {
   border-collapse: collapse;
@@ -1699,7 +1707,7 @@ table td:first-child {
   font-weight: 900;
 }
 table tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: #f4fd72;
 }
 ul {
   list-style-type: none;
@@ -1760,6 +1768,7 @@ div.flex {
   flex-direction: row;
   -webkit-justify-content: flex-start;
   justify-content: reverse-row;
+  align-items: stretch;
 }
 div.demo {
   padding: 10px;
@@ -1772,6 +1781,66 @@ div.demo {
 }
 div.demo span {
   font-size: 0.75em;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation-name: blink;
+  -webkit-animation-name: blink;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+}
+.warn {
+  background-color: #ffbc81;
+}
+.smallcaps {
+  font-variant: small-caps;
 }
 #intro {
   background-image: url('../img/animation-for-the-web.gif');
