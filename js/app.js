@@ -21,7 +21,9 @@
   });
 
   
-
+  setInterval(function(){
+    $('#transitions').toggleClass('alt');
+  },13000);
 
 })(jQuery);
 
@@ -99,5 +101,5 @@
     })
 
   });
-  
+
 })(jQuery);
