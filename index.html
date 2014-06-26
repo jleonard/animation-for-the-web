@@ -88,7 +88,18 @@ p{
               </div>
             </div>
             
-            <p>In the example above both boxes are styled to have a solid background and white text on hover. The first box has a transition rule that says anytime a change in color occurs, a 2 second transition will move between the values. The second box has no transition applied so the color changes happend instantaneously.</p>
+            <p>In the example above both boxes are styled to have a solid background with white text on hover. The first box has a transition rule that says anytime a change in color occurs, a 2 second transition will move between the values. The second box has no transition applied so the color changes happen instantaneously.</p>
+
+<pre><code>.demo{
+  transition-duration: 2s;
+  transition-property: all;
+  color: #222;
+}
+.demo:hover{
+  background-color: #ffdc00;
+  color: #fff;
+}
+</code></pre>
 
             <h3>Timing transitions</h3>
             <p>.css has a number of built-in <em>timing functions</em> to control a transition's acceleration.</p>
@@ -106,10 +117,21 @@ p{
               <a class="button" href="#">Test</a>
             </div>
 
+            <p>Or you can create your own custom acceleration function. The timing functions are cubic <a href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank">bezier curves just like Illustrator's pen tool.</a> The curves are based on a start and end point with two control points.
+              <br/>
+            Here's what a custom equation looks like...
+            </p>
+
+<pre><code>cubic-bezier(1,.1,1,.5)
+</code></pre>
+
             <aside>
               <p>Getting a transition right is about balancing the acceleration and the duration. Go play with this transition visualizer.</p>
               <a class="button" href="generator.html" target="_blank">Transition Visualizer</a>
             </aside>
+
+            <h3>Chaining transitions</h3>
+
 
             <h3>More reading</h3>
             <ul>
@@ -119,11 +141,15 @@ p{
               <li>
                 <a href="http://www.smashingmagazine.com/2014/04/15/understanding-css-timing-functions/" target="_blank">understanding css timing functions</a>
               </li>
+              <li>
+                <a href="http://cubic-bezier.com/" target="_blank">cubic bezier generator</a>
+              </li>
             </ul>
           </div>
         </section>
 
       </main>
+      <script type="text/javascript" src="bower_components/dweet.io/dweet.io.js"></script>
       <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
       <script type="text/javascript" src="js/app.js"></script>
   </body>
