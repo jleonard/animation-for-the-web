@@ -121,6 +121,7 @@ h5{
 }
 
 p,ul,table,blockquote{
+  #util > .clearfix();
   font: normal 1.5em/1.4375em @serif;
   &.lead{
     font: 2em/1.4375em @serif;
@@ -152,6 +153,12 @@ ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+img.inline{
+  max-width: 30%;
+  margin: 0px 80px 0px 20px;
+  float: left;
 }
 
 section:nth-child(2){
@@ -423,6 +430,24 @@ div.demo{
     }
     &.skew{
       #transform > .skew(5deg,5deg);
+    }
+  }
+}
+
+// jams
+// ---------------------------
+.jams{
+  .demo{
+    #transition > .property(all);
+    #transition > .duration(1s);
+    &.my-ease-out{
+      transition-timing-function: cubic-bezier(0.1,1,0.5,0.5);
+    }
+    &.glide{
+      transition-timing-function: cubic-bezier(0.38,0.25,0.44,0.95);
+    }
+    &.teleport-out{
+      transition-timing-function: cubic-bezier(1,1,0,1);
     }
   }
 }
