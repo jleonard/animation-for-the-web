@@ -1684,6 +1684,23 @@ table,
 blockquote {
   font: normal 1.5em/1.4375em 'Vollkorn', serif;
 }
+p:before,
+ul:before,
+table:before,
+blockquote:before,
+p:after,
+ul:after,
+table:after,
+blockquote:after {
+  content: " ";
+  display: table;
+}
+p:after,
+ul:after,
+table:after,
+blockquote:after {
+  clear: both;
+}
 p.lead,
 ul.lead,
 table.lead,
@@ -1713,6 +1730,11 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+img.inline {
+  max-width: 30%;
+  margin: 0px 80px 0px 20px;
+  float: left;
 }
 section.lead {
   background-size: cover;
@@ -1768,7 +1790,6 @@ div.flex {
   flex-direction: row;
   -webkit-justify-content: flex-start;
   justify-content: reverse-row;
-  align-items: stretch;
 }
 div.demo {
   padding: 10px;
@@ -2059,4 +2080,19 @@ div.demo span {
   -o-transform: skew(5deg, 5deg);
   -ms-transform: skew(5deg, 5deg);
   transform: skew(5deg, 5deg);
+}
+.jams .demo {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+.jams .demo.my-ease-out {
+  transition-timing-function: cubic-bezier(0.1, 1, 0.5, 0.5);
+}
+.jams .demo.glide {
+  transition-timing-function: cubic-bezier(0.38, 0.25, 0.44, 0.95);
+}
+.jams .demo.teleport-out {
+  transition-timing-function: cubic-bezier(1, 1, 0, 1);
 }

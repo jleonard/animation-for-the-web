@@ -113,7 +113,7 @@ p{
             </div>
             
 
-            <p>Both of these boxes have hover effects that change the text and background colors. The box on the left has a 2 second linear transition while the right shows the standard hard swap behavior.</p>
+            <p>Both boxes have hover effects that change the text and background colors. The box on the left has a 2 second linear transition while the right shows the standard hard swap behavior.</p>
 
             <p>Transitions are defined by 4 properties.</p>
 
@@ -151,15 +151,15 @@ p{
 
             <h3>understanding acceleration</h3>
 
-            <blockquote>In .css <em>acceleration</em> is referred to as a <em>timing-function</em>. The term acceleration is used here because it's a clearer way to indicate what's being talked about.</blockquote>
+            <blockquote>In .css <em>acceleration</em> is referred to as a <em>timing-function</em>. The terms acceleration and timing-fuctions are used interchangably in this section.</blockquote>
 
-            <p>Acceleration sounds similar to duration but they have different responsibilities.</p>
+            <p>Acceleration sounds similar to duration but each has a unique responsibility.</p>
 
             <p><strong>duration</strong> is the fixed length of time it takes to complete a transition.</p>
 
-            <p><strong>acceleration</strong> provides a way to express changes in velocity that occur during the duration. Example: you may want a transition that starts quickly and slows to a crawl at the end.</p>
+            <p><strong>acceleration</strong> is the change in velocity that occurs during the transition. Example: you may want a transition that starts quickly and slows to a crawl at the end.</p>
 
-            <p>.css has a number of built-in <em>timing functions</em>. Test them below note how each has a unique way of moving from A to B but all arrive at same time.</p>
+            <p>.css has a number of built-in <em>timing functions</em>. Test them below and note how each has a different acceleration while they share the same duration.</p>
 
             <div class='timing'>
               <div class='flex'>
@@ -175,10 +175,12 @@ p{
               <a class="button" href="#">Test</a>
             </div>
 
-            <p>These are based on <a href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves" target="_blank">cubic bezier curves</a>. If represented visually they would look familiar to anyone used to line drawing tools like Adobe Illustrator.</p>
+            <p>The timing-functions are based on <a href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves" target="_blank">cubic bezier curves</a>. When represented visually they should look familiar to anyone that's used line drawing tools like Adobe Illustrator.
+            </p>
             
-            <img src="img/bezier.png" alt='bezier curve'/>
-            <p>The curves are defined by two main points (start and stop) and two control points.</p>
+            <p>
+                <img class='inline' src="img/bezier.png" alt='bezier curve'/>
+             The curves are defined by two main points (start and stop) and two control points.</p>
 
             <h3>creating your own acceleration styles</h3>
 
@@ -196,19 +198,10 @@ p{
               <a class="button" href="#">Test</a>
             </div>
 
-            <!--<h5>cubic-bezier(<span>CP0x</span>, <span>CP0y</span>, <span>CP1x</span>, <span>CP1y</span>);</h5>
-
-            <p>Where CP<sub>0</sub> and CP<sub>1</sub> are the control points.</p> -->
-
             <blockquote>
               Getting a transition right is about balancing acceleration and duration. Go play with this transition visualizer.
               <a class="button" href="generator.html" target="_blank">Transition Visualizer</a>
             </blockquote>
-
-            <h3>code along: code a transition</h3>
-
-            <p>If you're coding along, follow these steps to create your own transition from scratch.</p>
-
 
             <h3>more reading</h3>
             <ul>
@@ -229,6 +222,18 @@ p{
           <div>
             <h1>keyframe animations</h1>
           </div>
+        </section>
+
+        <section>
+          <div class='timing jams'>
+            <div class='hbox'>
+              <div class='demo my-ease-out'>my ease out</div>
+              <div class='demo glide'>glide</div>
+              <div class='demo teleport-out'>teleport-out</div>
+            </div>
+            <a class="button" href="#">Test</a>
+          </div>
+          
         </section>
 
       </main>
