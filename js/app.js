@@ -1,29 +1,50 @@
+(function($){ 
+    $.fn.toggleText = function(a,b) {
+      return this.each(function() {
+        var on = false;
+        var el = $(this);
+        el.text(a);
+        el.click(function(){
+          var txt = on == true ? a : b;
+              el.text(txt);
+              on = !on;
+        });
+      });
+  };
+})(window.jQuery);
+
 (function($){
 
 	dweetio.listen_for("aback-rest-55", function(dweet){
   	// This will be called anytime there is a new dweet for my-thing
-  	console.log("dweet ",dweet);
   	var css = 'rotateX('+dweet.content.tilt_x+'deg) rotateY('+dweet.content.tilt_y+'deg) rotateZ('+dweet.content.tilt_z+'deg)';
-  	console.log('css ',css);
   	$('.dweet').css('transform',css);
   	$('.dweet').css('-webkit-transform',css);
 	});
 
   
-  $('.timing .button').on('click',function(e){
+  $('.example .button').on('click',function(e){
+    
     e.preventDefault();
-    var $this = $(this).parent();
-    $this.find('.demo').addClass('hover');
 
-    setTimeout(function(){
-      $this.find('.demo').removeClass('hover');
-    },3000);
+    var $this = $(this).parent();
+    var $demos = $this.find('.demo');
+
+    if(!$this.hasClass('animation')){
+      $demos.addClass('hover');
+      setTimeout(function(){
+        $this.find('.demo').removeClass('hover');
+      },3000);
+    }else{
+      $demos.toggleClass('hover');
+    }
+
   });
 
-  
-  setInterval(function(){
-    $('#transitions').toggleClass('alt');
-  },13000);
+
+  $('.button.toggle').each(function(e){
+    $(this).toggleText($(this).attr('data-off'),$(this).attr('data-on'));
+  });
 
 })(jQuery);
 
@@ -35,6 +56,7 @@
   var duration = 2000;
   var properties = [];
   var $style;
+  var $sample;
 
   function generateCss(){
     $style.html('');
@@ -50,7 +72,6 @@
     css += ' #demo.hover{';
 
     $('input[name="property"]:checked').each(function(i,e){
-      console.log('hi');
       switch($(this).val()){
         case 'background-color':
           css += makeProperty('background-color','#FFDC00');
@@ -67,8 +88,8 @@
     
     css += '}';
 
-    console.log(css);
     $style.html(css);
+
   }
 
   function makeProperty(property,value){
@@ -79,6 +100,7 @@
 
     $style = $('#style');
     $demo = $('#demo');
+    $sample = $('#sample');
 
     $('select[name="easing"]').on('change',function(e){
       easing = $(this).val();
@@ -94,7 +116,6 @@
       $demo.addClass('hover');
       
       setTimeout(function(){
-        console.log('remove');
         $demo.removeClass('hover');
       },duration);
       

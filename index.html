@@ -68,7 +68,7 @@ p{
           </div>
         </section>
 
-        <!-- start transforms -->
+        <!-- start transforms 
         <section id="transforms">
           <div>
             <h1>transforms</h1>
@@ -90,6 +90,8 @@ p{
             </div>
           </div>
         </section>
+
+        -->
 
         <!-- start transitions -->
         <section id='transitions'>
@@ -161,7 +163,7 @@ p{
 
             <p>.css has a number of built-in <em>timing functions</em>. Test them below and note how each has a different acceleration while they share the same duration.</p>
 
-            <div class='timing'>
+            <div class='timing example'>
               <div class='flex'>
                 <div class='demo linear'>linear</div>
                 <div class='demo ease'>ease</div>
@@ -188,11 +190,12 @@ p{
 
             <p>If you want finer control to create a more expressive animation then you'll need to create your own custom bezier curves. The easiest way is to use an online <a href="http://www.roblaplaca.com/examples/bezierBuilder/" target="_blank">bezier builder</a>.</p>
 
-            <p>Here's one I made. It's an exaggerated version of <code>ease-out</code>.</p>
+            <p>Here are two that I've made as alternatives to <code>ease-out</code>.</p>
 
-            <div class='timing'>
+            <div class='timing example'>
               <div class='flex'>
-                <div class='demo custom-timing'>custom timing</div>
+                <div class='demo teleport'>teleport</div>
+                <div class='demo custom-timing'>new ease out</div>
                 <div class='demo ease-out'>ease-out</div>
               </div>
               <a class="button" href="#">Test</a>
@@ -226,22 +229,55 @@ p{
 
         <section>
           <div>
-            <h2>Animations give you more control than transitions</h2>
-            <ol>
-              <li>animations can be paused (and resumed)</li>
-              <li>animations can be set to repeat a certain number of times.</li>
-            </ol>
-          </div>
-        </section>
+            <h2>how are animations and transitions different?</h2>
+            <p class='lead'>the biggest contrast with transitions is that animations give you control over the steps or <em>keyframes</em></p>
 
-        <section>
-          <div>
-            <p>Animations can be paused</p>
+            <p>In this example there are three keyframes that define the state of the object at 0%, 80% and 100% of the animation.</p>
 
-            <div class="timing">
-              <div class='demo animation pause'></div>
-              <a class="button" href="#">Test</a>
+            <div class="example animation multi-keyframe">
+              <div class='demo keyframes'>keyframes</div>
             </div>
+
+<pre><code>@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  80% {
+    background-color: transparent;
+    transform: translateX(-10%) skew(-5deg, -5deg);
+  }
+  100% {
+    background-color: #ffdc00;
+    color: #ff4136;
+    transform: translateX(200%) skew(5deg, 5deg);
+  }
+}</code></pre>
+
+            <p class='lead'>animations can be paused</p>
+
+            <div class="example animation pause-animation">
+              <div class='demo keyframes'>play/pause</div>
+              <a class="button toggle" href="#" data-on='play' data-off='pause'></a>
+            </div>
+
+            <p class='lead'>animations have different looping options</p>
+
+            <div class="example animation loop-animation">
+              <div class='hbox'>
+                <div class='demo keyframes normal'>normal</div>
+                <div class='demo keyframes continuous'>alternate</div>
+                <div class='demo keyframes reverse'>reverse</div>
+              </div>
+            </div>
+
+            <p>The box in the middle will play forward and then reverse for a continuous feel. The normal and reverse boxes will return to the start or stop positions before each iteration.</p>
+
+            <p class='lead'>animations can be set to a fixed number of iterations.</p>
+            <div class="example animation iteration">
+              <div class='demo keyframes'>4x</div>
+              <a class="button" href="#">start</a>
+            </div>
+
           </div>
         </section>
 

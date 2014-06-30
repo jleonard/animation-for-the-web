@@ -2,7 +2,7 @@
   "name": "brainless",
   "description": "A collection of .less utilities and conveniences",
   "author": "John Leonard <thejohnleonard@gmail.com>",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "main": "brainless.less",
   "repository": {
     "type": "git",
@@ -14,11 +14,11 @@
     "components"
   ],
   "homepage": "https://github.com/jleonard/brainless",
-  "_release": "3.0.6",
+  "_release": "3.0.7",
   "_resolution": {
     "type": "version",
-    "tag": "3.0.6",
-    "commit": "e09420136999c5331b4492caff2f3ad0cbd10a8c"
+    "tag": "3.0.7",
+    "commit": "e74af77bb5ef8d5062efca6cfbd18fa79ac09563"
   },
   "_source": "git://github.com/jleonard/brainless.git",
   "_target": "~3.0.3",

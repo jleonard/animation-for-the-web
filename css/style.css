@@ -1790,6 +1790,15 @@ div.flex {
   flex-direction: row;
   -webkit-justify-content: flex-start;
   justify-content: reverse-row;
+  align-items: stretch;
+}
+div.timer {
+  background-color: #2ecc40;
+  color: #f4fd72;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 8px 0px;
 }
 div.demo {
   padding: 10px;
@@ -1878,7 +1887,8 @@ div.demo span {
   color: #ffffff;
   background-color: #85144b;
 }
-#transitions {
+#transitions,
+#animations {
   background-color: #ffdc00;
   color: #fff;
   -webkit-transition-property: all;
@@ -1886,7 +1896,8 @@ div.demo span {
   -webkit-transition-duration: 12s;
   transition-duration: 12s;
 }
-#transitions.alt {
+#transitions.alt,
+#animations.alt {
   color: #ffdc00;
   background-color: #fff;
 }
@@ -1950,12 +1961,12 @@ div.demo span {
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
+.example a.button {
+  margin: 16px 0px;
+}
 .timing {
   margin: 0;
   width: 100%;
-}
-.timing a.button {
-  margin: 16px 0px;
 }
 .timing .demo {
   -webkit-transition-property: all;
@@ -2006,6 +2017,9 @@ div.demo span {
 }
 .timing .demo.custom-timing {
   transition-timing-function: cubic-bezier(0.1, 1, 0.5, 0.5);
+}
+.timing .demo.teleport {
+  transition-timing-function: cubic-bezier(1, 1, 0, 1);
 }
 .generator h1 {
   margin-top: 25px;
@@ -2081,18 +2095,233 @@ div.demo span {
   -ms-transform: skew(5deg, 5deg);
   transform: skew(5deg, 5deg);
 }
-.jams .demo {
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 1s;
-  transition-duration: 1s;
+@-webkit-keyframes flappy {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(180deg) translateX(-50%);
+    -moz-transform: rotateY(180deg) translateX(-50%);
+    -o-transform: rotateY(180deg) translateX(-50%);
+    -ms-transform: rotateY(180deg) translateX(-50%);
+    transform: rotateY(180deg) translateX(-50%);
+  }
 }
-.jams .demo.my-ease-out {
-  transition-timing-function: cubic-bezier(0.1, 1, 0.5, 0.5);
+@-moz-keyframes flappy {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(180deg) translateX(-50%);
+    -moz-transform: rotateY(180deg) translateX(-50%);
+    -o-transform: rotateY(180deg) translateX(-50%);
+    -ms-transform: rotateY(180deg) translateX(-50%);
+    transform: rotateY(180deg) translateX(-50%);
+  }
 }
-.jams .demo.glide {
-  transition-timing-function: cubic-bezier(0.38, 0.25, 0.44, 0.95);
+@-o-keyframes flappy {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(180deg) translateX(-50%);
+    -moz-transform: rotateY(180deg) translateX(-50%);
+    -o-transform: rotateY(180deg) translateX(-50%);
+    -ms-transform: rotateY(180deg) translateX(-50%);
+    transform: rotateY(180deg) translateX(-50%);
+  }
 }
-.jams .demo.teleport-out {
-  transition-timing-function: cubic-bezier(1, 1, 0, 1);
+@keyframes flappy {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(180deg) translateX(-50%);
+    -moz-transform: rotateY(180deg) translateX(-50%);
+    -o-transform: rotateY(180deg) translateX(-50%);
+    -ms-transform: rotateY(180deg) translateX(-50%);
+    transform: rotateY(180deg) translateX(-50%);
+  }
+}
+@-webkit-keyframes loopy {
+  0% {
+    -webkit-transform: skew(-5deg, -5deg);
+    -moz-transform: skew(-5deg, -5deg);
+    -o-transform: skew(-5deg, -5deg);
+    -ms-transform: skew(-5deg, -5deg);
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    -webkit-transform: skew(5deg, 5deg);
+    -moz-transform: skew(5deg, 5deg);
+    -o-transform: skew(5deg, 5deg);
+    -ms-transform: skew(5deg, 5deg);
+    transform: skew(5deg, 5deg);
+  }
+}
+@-moz-keyframes loopy {
+  0% {
+    -webkit-transform: skew(-5deg, -5deg);
+    -moz-transform: skew(-5deg, -5deg);
+    -o-transform: skew(-5deg, -5deg);
+    -ms-transform: skew(-5deg, -5deg);
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    -webkit-transform: skew(5deg, 5deg);
+    -moz-transform: skew(5deg, 5deg);
+    -o-transform: skew(5deg, 5deg);
+    -ms-transform: skew(5deg, 5deg);
+    transform: skew(5deg, 5deg);
+  }
+}
+@-o-keyframes loopy {
+  0% {
+    -webkit-transform: skew(-5deg, -5deg);
+    -moz-transform: skew(-5deg, -5deg);
+    -o-transform: skew(-5deg, -5deg);
+    -ms-transform: skew(-5deg, -5deg);
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    -webkit-transform: skew(5deg, 5deg);
+    -moz-transform: skew(5deg, 5deg);
+    -o-transform: skew(5deg, 5deg);
+    -ms-transform: skew(5deg, 5deg);
+    transform: skew(5deg, 5deg);
+  }
+}
+@keyframes loopy {
+  0% {
+    -webkit-transform: skew(-5deg, -5deg);
+    -moz-transform: skew(-5deg, -5deg);
+    -o-transform: skew(-5deg, -5deg);
+    -ms-transform: skew(-5deg, -5deg);
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    -webkit-transform: skew(5deg, 5deg);
+    -moz-transform: skew(5deg, 5deg);
+    -o-transform: skew(5deg, 5deg);
+    -ms-transform: skew(5deg, 5deg);
+    transform: skew(5deg, 5deg);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  80% {
+    background-color: transparent;
+    -webkit-transform: translateX(-10%) skew(-5deg, -5deg);
+    -moz-transform: translateX(-10%) skew(-5deg, -5deg);
+    -o-transform: translateX(-10%) skew(-5deg, -5deg);
+    -ms-transform: translateX(-10%) skew(-5deg, -5deg);
+    transform: translateX(-10%) skew(-5deg, -5deg);
+  }
+  100% {
+    background-color: #ffdc00;
+    color: #ff4136;
+    -webkit-transform: translateX(200%) skew(5deg, 5deg);
+    -moz-transform: translateX(200%) skew(5deg, 5deg);
+    -o-transform: translateX(200%) skew(5deg, 5deg);
+    -ms-transform: translateX(200%) skew(5deg, 5deg);
+    transform: translateX(200%) skew(5deg, 5deg);
+  }
+}
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  80% {
+    background-color: transparent;
+    -webkit-transform: translateX(-10%) skew(-5deg, -5deg);
+    -moz-transform: translateX(-10%) skew(-5deg, -5deg);
+    -o-transform: translateX(-10%) skew(-5deg, -5deg);
+    -ms-transform: translateX(-10%) skew(-5deg, -5deg);
+    transform: translateX(-10%) skew(-5deg, -5deg);
+  }
+  100% {
+    background-color: #ffdc00;
+    color: #ff4136;
+    -webkit-transform: translateX(200%) skew(5deg, 5deg);
+    -moz-transform: translateX(200%) skew(5deg, 5deg);
+    -o-transform: translateX(200%) skew(5deg, 5deg);
+    -ms-transform: translateX(200%) skew(5deg, 5deg);
+    transform: translateX(200%) skew(5deg, 5deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg) rotateY(0deg);
+    -moz-transform: rotateZ(0deg) rotateY(0deg);
+    -o-transform: rotateZ(0deg) rotateY(0deg);
+    -ms-transform: rotateZ(0deg) rotateY(0deg);
+    transform: rotateZ(0deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) rotateY(360deg);
+    -moz-transform: rotateZ(360deg) rotateY(360deg);
+    -o-transform: rotateZ(360deg) rotateY(360deg);
+    -ms-transform: rotateZ(360deg) rotateY(360deg);
+    transform: rotateZ(360deg) rotateY(360deg);
+  }
+}
+.demo.keyframes {
+  -webkit-transition-property: none;
+  transition-property: none;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+.example.pause-animation .demo {
+  animation-name: flappy;
+  -webkit-animation-name: flappy;
+}
+.example.pause-animation .demo.hover {
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+.example.loop-animation .demo {
+  animation-name: loopy;
+  -webkit-animation-name: loopy;
+}
+.example.loop-animation .demo.normal {
+  animation-direction: normal;
+  -webkit-animation-direction: normal;
+}
+.example.loop-animation .demo.reverse {
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+}
+.example.multi-keyframe .demo {
+  animation-name: slide;
+  -webkit-animation-name: slide;
+}
+.example.iteration .demo {
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-direction: normal;
+  -webkit-animation-direction: normal;
+}
+.example.iteration .demo.hover {
+  animation-name: spin;
+  -webkit-animation-name: spin;
+  animation-iteration-count: 4;
+  -webkit-animation-iteration-count: 4;
 }
